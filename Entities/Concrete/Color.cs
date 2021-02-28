@@ -7,7 +7,7 @@ namespace Entities.Concrete
 {
     public class Color: IEntity
     {
-        public int Colorid { get; set; }
+        public int ColorId { get; set; }
         public int ColorName { get; set; }
     }
 }
