@@ -41,25 +41,13 @@ namespace DataAccess.Concrete.EntityFreamwork
             }
         }
 
-        public Car Get(Expression<Func<Car, bool>> filter)
+        public Car GetById(Expression<Func<Car, bool>> filter)
         {
             using (ReCapProjectContext context = new ReCapProjectContext())
             {
                 return context.Set<Car>().SingleOrDefault(filter);
-
             }
         }
-
-        public Color Get(Expression<Func<Color, bool>> filter)
-        {
-            using (ReCapProjectContext context = new ReCapProjectContext())
-            {
-                return context.Set<Color>().SingleOrDefault(filter);
-            }
-        }
-
-
-
 
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
@@ -69,7 +57,5 @@ namespace DataAccess.Concrete.EntityFreamwork
 
             }
         }
-
-       
     }
 }

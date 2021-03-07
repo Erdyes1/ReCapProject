@@ -1,13 +1,11 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
-    class BrandManager : IBrandService
+    public class BrandManager : IBrandService
     {
         IBrandDal _brandDal;
 
@@ -26,12 +24,12 @@ namespace Business.Concrete
             _brandDal.Delete(brand);
         }
 
-        public List<Brand> Get()
+        public List<Brand> GetById(int brandId)
         {
-            return _brandDal.Get();
+            return _brandDal.GetAll(b => b.BrandId == brandId);
         }
 
-        public List<Brand> GetAll(int Id)
+        public List<Brand> GetAll()
         {
             return _brandDal.GetAll();
         }

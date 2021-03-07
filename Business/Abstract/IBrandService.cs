@@ -1,7 +1,5 @@
 ﻿using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {
@@ -11,7 +9,7 @@ namespace Business.Abstract
         void Delete(Brand brand);
         void Update(Brand brand);
 
-        List<Brand> Get();
-        List<Brand> GetAll(int Id);
+        List<Brand> GetById(int brandId);
+        List<Brand> GetAll();
     }
 }

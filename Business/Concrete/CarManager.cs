@@ -1,9 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -25,12 +23,12 @@ namespace Business.Concrete
             _carDal.Delete(car);
         }
 
-        public List<Car> Get()
+        public List<Car> GetById(int carId)
         {
-            return _carDal.Get();
+            return _carDal.GetAll(c => c.CarId == carId);
         }
 
-        public List<Car> GetAll(int Id)
+        public List<Car> GetAll()
         {
             return _carDal.GetAll();
         }

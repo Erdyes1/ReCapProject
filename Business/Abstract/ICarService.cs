@@ -1,7 +1,5 @@
 ﻿using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {
@@ -11,8 +9,8 @@ namespace Business.Abstract
         void Delete(Car car);
         void Update(Car car);
 
-        List<Car> Get();
-        List<Car> GetAll(int Id);
+        List<Car> GetById(int carId);
+        List<Car> GetAll();
 
     }
 }

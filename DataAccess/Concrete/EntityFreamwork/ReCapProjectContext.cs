@@ -10,12 +10,12 @@ namespace DataAccess.Concrete.EntityFreamwork
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB, database=reCapProject, Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; Database=ReCapProject; Trusted_Connection=true");
         }
-
-        public DbSet<Brand> brands  { get; set; }
-        public DbSet<Car>   cars    { get; set; }
-        public DbSet<Color> colors  { get; set; }
+                                            
+        public DbSet<Brand> Brands  { get; set; }
+        public DbSet<Car>   Cars    { get; set; }
+        public DbSet<Color> Colors  { get; set; }
 
     }
 }

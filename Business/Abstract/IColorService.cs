@@ -1,7 +1,5 @@
 ﻿using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {
@@ -11,7 +9,7 @@ namespace Business.Abstract
         void Delete(Color color);
         void Update(Color color);
 
-        List<Color> Get();
-        List<Color> GetAll(int Id);
+        List<Color> GetById(int colorId);
+        List<Color> GetAll();
     }
 }

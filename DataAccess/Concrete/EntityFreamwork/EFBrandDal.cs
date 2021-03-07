@@ -30,7 +30,7 @@ namespace DataAccess.Concrete.EntityFreamwork
                 context.SaveChanges();
             }
         }
-        
+
         public void Update(Brand entity)
         {
             using (ReCapProjectContext context = new ReCapProjectContext())
@@ -41,7 +41,7 @@ namespace DataAccess.Concrete.EntityFreamwork
             }
         }
 
-        public Brand Get(Expression<Func<Brand, bool>> filter)
+        public Brand GetById(Expression<Func<Brand, bool>> filter)
         {
             using (ReCapProjectContext context = new ReCapProjectContext())
             {
@@ -56,7 +56,9 @@ namespace DataAccess.Concrete.EntityFreamwork
             {
                 return filter == null ? context.Set<Brand>().ToList() : context.Set<Brand>().Where(filter).ToList();
 
+
+
             }
         }
-    }
+    }  
 }
