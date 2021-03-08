@@ -12,18 +12,36 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarGetAll();
-            CarAdd();
-            CarGetAll();
-            CarUpdate();
-            CarGetAll();
-            CarGetByID(4);
-            CarDelete(4);
-            CarGetAll();
+            //CarAdd();
+            //CarGetAll();
+            //CarUpdate();
+            //CarGetAll();
+            //CarGetByID(4);
+            //CarDelete(4);
+            //CarGetAll();
 
-            BrandgetAll();
-            BrandGetById(2);
-            ColorGetAll();
-            ColorGetById(2);
+            //BrandgetAll();
+            //BrandGetById(2);
+            //ColorGetAll();
+            //ColorGetById(2);
+
+            CarGetDetail();
+
+        }
+
+        private static void CarGetDetail()
+        {
+            CarManager carManager = new CarManager(new EFCarDal());
+            Console.WriteLine("----  CarGetDetail--");
+            Console.WriteLine("Car ID  " + "  Car Marke" + "    Car Color " );
+            foreach (var car in carManager.GetCarDetails())
+            {
+                Console.WriteLine("   " + car.CarId + "      " + car.BrandName + "           " + car.ColorName);
+            }
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+
+            Console.WriteLine("-------------------------------------");
         }
 
         private static void CarDelete(int id)
