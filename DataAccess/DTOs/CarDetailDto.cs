@@ -13,5 +13,7 @@ namespace DataAccess.DTOs
         public int ModelYear { get; set; }
         public int DailyPrice { get; set; }
         public string Description { get; set; }
+
+        public string CarModel { get; set; }
     }
 }

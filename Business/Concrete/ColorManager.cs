@@ -1,4 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -18,29 +21,61 @@ namespace Business.Concrete
 
         
 
-        public void Add(Color color)
+        public IResult Add(Color color)
         {
+            if (color.ColorName.Length < 2)
+            {
+                return new ErrorResult(Messages.ColorNameWrong);
+            }
             _colorDal.Add(color);
+            return new SuccessResult(Messages.ColorAdded);
+    
         }
 
-        public void Delete(Color color)
+        public IResult Delete(Color color)
         {
+            Console.WriteLine(Messages.QuestioncarDeleted);
+            var Input = Console.ReadLine();
             _colorDal.Delete(color);
+            if (Input == "EVET")
+            {
+
+                return new SuccessResult(Messages.ColorDeleted);
+            }
+            else
+            {
+                return new ErrorResult(Messages.ColorNotDeleted);
+            }
+           
         }
 
-        public List<Color> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
-            return _colorDal.GetAll();
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
         }
 
-        public List<Color> GetById(int colorId)
+        public IDataResult<List<Color>> GetById(int colorId)
         {
-            return _colorDal.GetAll(c=> c.ColorId==colorId);
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(c=> c.ColorId==colorId));
         }
 
-        public void Update(Color color)
+        public IResult Update(Color color)
         {
+            
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
+            }
             _colorDal.Update(color);
+            return new SuccessResult(Messages.ColorUpdated);
         }
     }
 }
