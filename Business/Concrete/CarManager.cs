@@ -77,11 +77,15 @@ namespace Business.Concrete
          
         }
 
-       
-
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-                        return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(),Messages.CarListed);
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(),Messages.CarListed);
+        }
+        
+        
+        public IDataResult<List<CarRentListDto>> GetCarRentList()
+        {
+            return new SuccessDataResult<List<CarRentListDto>>(_carDal.GetCarRentLists(), Messages.CarListed);
         }
     }
 }
