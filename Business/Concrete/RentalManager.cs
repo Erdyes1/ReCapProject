@@ -4,9 +4,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -38,7 +36,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Rental>> GetById(int rentalId)
         {
-            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(p=>p.RentalId == rentalId),Messages.RentalSelected);
+            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(p => p.RentalId == rentalId), Messages.RentalSelected);
         }
 
         public IResult Update(Rental rental)

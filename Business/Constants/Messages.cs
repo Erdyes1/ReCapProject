@@ -1,11 +1,4 @@
-﻿using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Business.Constants
+﻿namespace Business.Constants
 {
     public static class Messages
     {
@@ -21,7 +14,7 @@ namespace Business.Constants
         public static string CarUpdated = "Araba Yenilendi";
         public static string CarNotDeleted = " Araba Silinmedi";
 
-        public static string QuestioncarDeleted= "Arabanin silinmesinde Eminseniz EVET yaziniz";
+        public static string QuestioncarDeleted = "Arabanin silinmesinde Eminseniz EVET yaziniz";
 
         public static string BrandListed = "Markalar  Listelendi ";
         public static string BrandDeleted = " Marka Silindi";

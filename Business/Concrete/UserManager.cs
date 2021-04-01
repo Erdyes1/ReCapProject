@@ -4,9 +4,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -24,7 +22,7 @@ namespace Business.Concrete
         {
             _userDal.Add(user);
             return new SuccessResult(Messages.UserAdded);
-        } 
+        }
 
         public IResult Delete(User user)
         {
@@ -35,13 +33,13 @@ namespace Business.Concrete
         public IDataResult<List<User>> GetAll()
         {
             _userDal.GetAll();
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(),Messages.UsersListed);
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UsersListed);
         }
 
         public IDataResult<List<User>> GetById(int userId)
         {
 
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(p => p.UserId == userId),Messages.UserSelected);
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(p => p.UserId == userId), Messages.UserSelected);
         }
 
         public IResult Update(User user)

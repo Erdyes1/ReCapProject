@@ -1,12 +1,6 @@
-﻿using DataAccess.Abstract;
-using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-
-namespace DataAccess.Concrete.InMemory
+﻿namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryCarDal 
+    public class InMemoryCarDal
     {
 
         ////List<Car> _cars;
@@ -62,7 +56,7 @@ namespace DataAccess.Concrete.InMemory
         ////    carToUpdate.Description = car.Description;
 
         ////}
-        
+
         //public void Add(Car entity)
         //{
         //    throw new NotImplementedException();

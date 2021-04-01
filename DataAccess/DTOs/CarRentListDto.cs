@@ -1,11 +1,9 @@
 ﻿using Core.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataAccess.DTOs
 {
-    public class CarRentListDto:IDto
+    public class CarRentListDto : IDto
     {
         public int RentalId { get; set; }
         public int CarId { get; set; }

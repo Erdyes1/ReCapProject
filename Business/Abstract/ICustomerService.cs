@@ -1,9 +1,6 @@
 ﻿using Core.Utilities.Results.Abstract;
-using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Abstract
 {
@@ -16,6 +13,6 @@ namespace Business.Abstract
         IDataResult<List<Customer>> GetById(int customerId);
 
 
-        
+
     }
 }

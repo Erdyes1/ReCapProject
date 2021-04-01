@@ -6,7 +6,6 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Concrete
 {
@@ -19,7 +18,7 @@ namespace Business.Concrete
             _colorDal = colorDal;
         }
 
-        
+
 
         public IResult Add(Color color)
         {
@@ -29,7 +28,7 @@ namespace Business.Concrete
             }
             _colorDal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
-    
+
         }
 
         public IResult Delete(Color color)
@@ -46,7 +45,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.ColorNotDeleted);
             }
-           
+
         }
 
         public IDataResult<List<Color>> GetAll()
@@ -64,12 +63,12 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(c=> c.ColorId==colorId));
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(c => c.ColorId == colorId));
         }
 
         public IResult Update(Color color)
         {
-            
+
             if (DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<Color>>(Messages.MaintenanceTime);

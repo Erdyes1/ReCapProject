@@ -34,7 +34,7 @@ namespace Business.Concrete
             _brandDal.Delete(brand);
             Console.WriteLine(Messages.QuestioncarDeleted);
             var Input = Console.ReadLine();
-          
+
             if (Input == "EVET")
             {
 
@@ -51,7 +51,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Brand>> GetById(int brandId)
         {
-          
+
 
 
             if (DateTime.Now.Hour == 22)
@@ -63,11 +63,11 @@ namespace Business.Concrete
 
         public IDataResult<List<Brand>> GetAll()
         {
-            if(DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<Brand>>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(),Messages.BrandListed);
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandListed);
         }
 
         public IResult Update(Brand brand)
