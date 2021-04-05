@@ -22,10 +22,6 @@ namespace Business.Concrete
 
         public IResult Add(Color color)
         {
-            if (color.ColorName.Length < 2)
-            {
-                return new ErrorResult(Messages.ColorNameWrong);
-            }
             _colorDal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
 

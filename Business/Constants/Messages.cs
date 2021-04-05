@@ -44,5 +44,6 @@
         public static string RentalUpdated = "Kiralanma Yenilendi";
         public static string RentalListed = "Kiralanma Listelendi";
         public static string RentalSelected = "Secilen Kiralanma Listelendi";
+        public static string BrandAdded = " Brand kaydedildi";
     }
 }
